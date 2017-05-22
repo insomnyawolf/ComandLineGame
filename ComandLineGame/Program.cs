@@ -15,7 +15,7 @@ namespace ConsoleGame
                         done = true;
                         break;
                     default:
-                        Game.Base.Basegame();
+                        Game.Base.Std();
                         break;
                 }
             }

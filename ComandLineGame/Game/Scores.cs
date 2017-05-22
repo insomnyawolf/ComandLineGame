@@ -1,15 +1,15 @@
 ﻿using System;
 //using ConsoleGame.Properties;
-using System.IO;
 
 namespace ConsoleGame.Game
 {
 
     class Scores
     {
-        public static void Calculate(string mode)
+        public static void Calculate()
         {
-            switch (mode)
+            //Como le indic que modo es?
+            switch (Game.Mode)
             {
                 case "Std":
                     Standart();
@@ -25,7 +25,7 @@ namespace ConsoleGame.Game
 
         private static void Standart()
         {
-            uint CalcuatedScore = Convert.ToUInt32((10 * (Base.combo * Base.combo)) / ((++Base.elapseds) * 2));
+            uint CalcuatedScore = Convert.ToUInt32((10 * (Game.combo * Game.combo)) / ((++Game.elapseds) * 2));
             Output(CalcuatedScore);
         }
 
@@ -33,7 +33,7 @@ namespace ConsoleGame.Game
         {
 
             Console.WriteLine(Environment.NewLine +
-                                    "You archived: " + Base.combo + " hits in " + Base.elapseds + " seconds." + Environment.NewLine +
+                                    "You archived: " + Game.combo + " hits in " + Game.elapseds + " seconds." + Environment.NewLine +
                                     "Your score is: " + CalcuatedScore + Environment.NewLine);
             Console.WriteLine("Press any key to try again or escape to exit" + Environment.NewLine);
              

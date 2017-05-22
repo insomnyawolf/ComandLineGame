@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleGame.Game
 {
@@ -18,6 +14,7 @@ namespace ConsoleGame.Game
 
         public static void Output()
         {
+            //This works but needs a rework
             outputline1 = outputline2;
             outputline2 = outputline3;
             outputline3 = outputline4;
@@ -27,7 +24,7 @@ namespace ConsoleGame.Game
             outputline7 = outputline8;
             outputline8 = outputline9;
             outputline9 = "        " + outputline10;
-            outputline10 = Base.output;
+            outputline10 = Game.output;
             outputline =
                 outputline1 +
                 Environment.NewLine +

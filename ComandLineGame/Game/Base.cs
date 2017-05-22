@@ -1,40 +1,42 @@
 ﻿using System;
 namespace ConsoleGame.Game
 {
-    class Base
+    class Game
     {
+        public static string Mode;// Std Test Others
         public static uint elapseds;
         public static uint combo;
         public static string output;
-        public static void Basegame()
+    }
+    class Base
+    {
+        
+        public static void Std()
         {
+            Game.Mode = "Std";
+            Game.combo = 0;
+            bool miss = false;
             dynamic watch = System.Diagnostics.Stopwatch.StartNew();
-            combo = 0;
-            bool game = true;
-            while (game == true)
+            while (miss == false)
             {
                 string key = Nextkey();
                 string keyinfo = Convert.ToString(Console.ReadKey(true).Key);
-                game = Correct(keyinfo, key);
-                switch (game)
+                miss = Compare(keyinfo, key);
+                if (miss == false)
                 {
-                    case true:
-                        combo++;
-                        break;
-                    default:
-                        OutputWriter.ClearCurrentConsole();
-                        break;
+                    Game.combo++;
                 }
             }
-            watch.Stop();
-            elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
-            Game.Scores.Calculate("Std");
+            OutputWriter.ClearCurrentConsole();
             OutputWriter.ClearLines();
+            watch.Stop();
+            Game.elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
+            Scores.Calculate();
         }
 
-        private static bool Correct(string keyinfo, string key)
+        private static bool Compare(string keyinfo, string key)
         {
-            return keyinfo == key;
+            return keyinfo != key;
         }
 
         private static string Nextkey()
@@ -43,19 +45,19 @@ namespace ConsoleGame.Game
             switch (rnd.Next(1, 5))
             {
                 case 1:
-                    output = "[Q]    [ ]    [ ]    [ ]";
+                    Game.output = "[Q]    [ ]    [ ]    [ ]";
                     OutputWriter.Output();
                     return "Q";
                 case 2:
-                    output = "[ ]    [W]    [ ]    [ ]";
+                    Game.output = "[ ]    [W]    [ ]    [ ]";
                     OutputWriter.Output();
                     return "W";
                 case 3:
-                    output = "[ ]    [ ]    [E]    [ ]";
+                    Game.output = "[ ]    [ ]    [E]    [ ]";
                     OutputWriter.Output();
                     return "E";
                 case 4:
-                    output = "[ ]    [ ]    [ ]    [R]";
+                    Game.output = "[ ]    [ ]    [ ]    [R]";
                     OutputWriter.Output();
                     return "R";
                 default:
