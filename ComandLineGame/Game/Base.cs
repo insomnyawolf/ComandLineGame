@@ -3,12 +3,14 @@ namespace ConsoleGame.Game
 {
     class Base
     {
-        static string output;
+        public static uint elapseds;
+        public static uint combo;
+        public static string output;
         public static void Basegame()
         {
-            var watch = System.Diagnostics.Stopwatch.StartNew();
+            dynamic watch = System.Diagnostics.Stopwatch.StartNew();
+            combo = 0;
             bool game = true;
-            uint combo = 0;
             while (game == true)
             {
                 string key = Nextkey();
@@ -25,14 +27,9 @@ namespace ConsoleGame.Game
                 }
             }
             watch.Stop();
-            uint elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
-            Game.Scores.Standard(combo, elapseds);
+            elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
+            Game.Scores.Calculate("Std");
             OutputWriter.ClearLines();
-        }
-
-        public static string OutString()
-        {
-            return output;
         }
 
         private static bool Correct(string keyinfo, string key)

@@ -27,7 +27,7 @@ namespace ConsoleGame.Game
             outputline7 = outputline8;
             outputline8 = outputline9;
             outputline9 = "        " + outputline10;
-            outputline10 = Base.OutString();
+            outputline10 = Base.output;
             outputline =
                 outputline1 +
                 Environment.NewLine +
