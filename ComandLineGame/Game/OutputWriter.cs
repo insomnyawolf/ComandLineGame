@@ -53,7 +53,7 @@ namespace ConsoleGame.Game
         {
             int currentLineCursor = ++Console.CursorTop;
             int targetLine = currentLineCursor - 100;
-            while (currentLineCursor > targetLine  && currentLineCursor > 2)
+            while (currentLineCursor > targetLine  && currentLineCursor > 3)
             {
                 Console.SetCursorPosition(0, currentLineCursor);
                 Console.Write(new string(' ', Console.WindowWidth));

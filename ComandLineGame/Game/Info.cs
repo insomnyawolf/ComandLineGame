@@ -8,7 +8,8 @@ namespace ConsoleGame.Game
             Console.WriteLine(
                 "Press Ctrl + C To Stop" + Environment.NewLine +
                 "Default keys are: Q,W,E,R" + Environment.NewLine +
-                "Press any key to start" + Environment.NewLine);
+                "Press P key to start without timmer or" + Environment.NewLine +
+                "any other key to start the default mode" + Environment.NewLine);
         }
     }
 }

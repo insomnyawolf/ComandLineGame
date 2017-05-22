@@ -10,13 +10,12 @@ namespace ConsoleGame.Game
     }
     class Base
     {
-        
         public static void Std()
         {
-            Game.Mode = "Std";
+            Game.Mode = "Standard";
             Game.combo = 0;
             bool hit = true;
-            dynamic watch = System.Diagnostics.Stopwatch.StartNew();
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             while (hit == true)
             {
                 string key = Nextkey();
@@ -31,6 +30,26 @@ namespace ConsoleGame.Game
             OutputWriter.ClearLines();
             watch.Stop();
             Game.elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
+            Scores.Calculate();
+        }
+
+        public static void NoTimer()
+        {
+            Game.Mode = "NoTimer";
+            Game.combo = 0;
+            bool hit = true;
+            while (hit == true)
+            {
+                string key = Nextkey();
+                string keyinfo = Convert.ToString(Console.ReadKey(true).Key);
+                hit = keyinfo.Equals(key);
+                if (hit == true)
+                {
+                    Game.combo++;
+                }
+            }
+            OutputWriter.ClearCurrentConsole();
+            OutputWriter.ClearLines();
             Scores.Calculate();
         }
 

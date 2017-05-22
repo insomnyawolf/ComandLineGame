@@ -1,5 +1,5 @@
 ﻿using System;
-//using ConsoleGame.Properties;
+//using ConsoleGame.Properties;  //Maybe i can use this to store locally the higest score
 
 namespace ConsoleGame.Game
 {
@@ -8,14 +8,13 @@ namespace ConsoleGame.Game
     {
         public static void Calculate()
         {
-            //Como le indic que modo es?
             switch (Game.Mode)
             {
-                case "Std":
-                    Standart();
+                case "Standard":
+                    Standard();
                     break;
-                case "Test":
-                    Console.WriteLine("Test Sucess");
+                case "NoTimer":
+                    NoTimmer();
                     break;
                 default:
                     Console.WriteLine("Default is here");
@@ -23,20 +22,36 @@ namespace ConsoleGame.Game
             }
         }
 
-        private static void Standart()
+        private static void Standard()
         {
             uint CalcuatedScore = Convert.ToUInt32((10 * (Game.combo * Game.combo)) / ((++Game.elapseds) * 2));
             Output(CalcuatedScore);
         }
 
+        private static void NoTimmer()
+        {
+            uint CalcuatedScore = Game.combo;
+            Output(CalcuatedScore);
+        }
+
         private static void Output(uint CalcuatedScore)
         {
+            string post;
+                post = 
+                   Environment.NewLine +
+                   "Game Mode: " + Game.Mode +
+                   Environment.NewLine +
+                   "You archived: " + Game.combo +
+                   " hits";
+            if (Game.Mode == "Standard")
+            {
+                post +=  " in " + Game.elapseds +" seconds.";
+            }
+                post +=  Environment.NewLine + "Your score is: " + CalcuatedScore +
+               Environment.NewLine +
+               "Press any key to try again or escape to exit" + Environment.NewLine;
 
-            Console.WriteLine(Environment.NewLine +
-                                    "You archived: " + Game.combo + " hits in " + Game.elapseds + " seconds." + Environment.NewLine +
-                                    "Your score is: " + CalcuatedScore + Environment.NewLine);
-            Console.WriteLine("Press any key to try again or escape to exit" + Environment.NewLine);
-             
+            Console.WriteLine(post);
         }
     }
 }
