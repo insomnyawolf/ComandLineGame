@@ -15,14 +15,14 @@ namespace ConsoleGame.Game
         {
             Game.Mode = "Std";
             Game.combo = 0;
-            bool miss = false;
+            bool hit = true;
             dynamic watch = System.Diagnostics.Stopwatch.StartNew();
-            while (miss == false)
+            while (hit == true)
             {
                 string key = Nextkey();
                 string keyinfo = Convert.ToString(Console.ReadKey(true).Key);
-                miss = Compare(keyinfo, key);
-                if (miss == false)
+                hit = keyinfo.Equals(key);
+                if (hit == true)
                 {
                     Game.combo++;
                 }
@@ -32,11 +32,6 @@ namespace ConsoleGame.Game
             watch.Stop();
             Game.elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
             Scores.Calculate();
-        }
-
-        private static bool Compare(string keyinfo, string key)
-        {
-            return keyinfo != key;
         }
 
         private static string Nextkey()
