@@ -20,17 +20,14 @@ namespace ConsoleGame.Game
         {
             ClearCurrentConsole();
 
-            if (outputbuffer.ElementAtOrDefault(9) != null)
+            if (outputbuffer.ElementAtOrDefault(9) == null)
             {
-                outputbuffer.RemoveAt(0);
-            }
-            else
-            {
-                for(int x = 0; x < 9; x++)
+                for (int x = 0; x < 10; x++)
                 {
                     outputbuffer.Add(String.Empty);
-                }    
+                }
             }
+            outputbuffer.RemoveAt(0);
             outputbuffer.Add(Game.output);
             foreach (string thing in outputbuffer)
             {
