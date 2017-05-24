@@ -14,6 +14,12 @@ namespace ConsoleGame
                     case ConsoleKey.Escape:
                         done = true;
                         break;
+                    case ConsoleKey.A:
+                        Game.Info.About();
+                        break;
+                    case ConsoleKey.P:
+                        Game.Base.NoTimer();
+                        break;
                     default:
                         Game.Base.Std();
                         break;

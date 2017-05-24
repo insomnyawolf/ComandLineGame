@@ -11,5 +11,14 @@ namespace ConsoleGame.Game
                 "Press P key to start without timmer or" + Environment.NewLine +
                 "any other key to start the default mode" + Environment.NewLine);
         }
+
+        public static void About()
+        {
+            OutputWriter.ClearCurrentConsole();
+            Console.WriteLine(
+                Environment.NewLine + Environment.NewLine +
+                "This game was coded by insomnyawolf" + Environment.NewLine +
+                "And ths is the about function example");
+        }
     }
 }

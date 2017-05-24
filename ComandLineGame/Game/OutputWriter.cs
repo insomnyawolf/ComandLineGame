@@ -7,22 +7,18 @@ namespace ConsoleGame.Game
 {
     class OutputWriter
     {
+        static int lines = 10; //Lines shown in screen
         static List<string> outputbuffer = new List<string>();
         static string outputline;
         static int outformat;
-
-        public static void ClearLines()
-        {
-            outputbuffer.Clear();
-        }
 
         public static void Output()
         {
             ClearCurrentConsole();
 
-            if (outputbuffer.ElementAtOrDefault(9) == null)
+            if (outputbuffer.ElementAtOrDefault(lines - 1) == null)
             {
-                for (int x = 0; x < 10; x++)
+                for (int x = 0; x < lines; x++)
                 {
                     outputbuffer.Add(String.Empty);
                 }
@@ -31,7 +27,7 @@ namespace ConsoleGame.Game
             outputbuffer.Add(Game.output);
             foreach (string thing in outputbuffer)
             {
-                if(outformat <= 8)
+                if(outformat <= lines - 2)
                 {
                     outputline += Environment.NewLine + "        " + thing + "        ";
                     outformat++;
@@ -44,6 +40,11 @@ namespace ConsoleGame.Game
             }
             Console.WriteLine(outputline);
             outputline = null;
+        }
+
+        public static void ClearLines()
+        {
+            outputbuffer.Clear();
         }
 
         public static void ClearCurrentConsole()
