@@ -1,0 +1,6 @@
+G:\Code\ConsoleGame\ComandLineGame\bin\Release\ComandLineGame.exe.config
+G:\Code\ConsoleGame\ComandLineGame\bin\Release\ComandLineGame.exe
+G:\Code\ConsoleGame\ComandLineGame\bin\Release\ComandLineGame.pdb
+G:\Code\ConsoleGame\ComandLineGame\obj\Release\ComandLineGame.csprojResolveAssemblyReference.cache
+G:\Code\ConsoleGame\ComandLineGame\obj\Release\ComandLineGame.exe
+G:\Code\ConsoleGame\ComandLineGame\obj\Release\ComandLineGame.pdb

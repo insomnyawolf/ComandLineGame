@@ -1,11 +1,11 @@
 ﻿using System;
-namespace ConsoleGame
+namespace ComandLineGame
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Game.Info.Intro();
+            Code.Info.Intro();
             bool done = false;
             while (!done)
             {
@@ -15,13 +15,13 @@ namespace ConsoleGame
                         done = true;
                         break;
                     case ConsoleKey.A:
-                        Game.Info.About();
+                        Code.Info.About();
                         break;
                     case ConsoleKey.P:
-                        Game.Base.NoTimer();
+                        Code.Modes.NT.Base();
                         break;
                     default:
-                        Game.Base.Std();
+                        Code.Modes.Std.Base();
                         break;
                 }
             }
