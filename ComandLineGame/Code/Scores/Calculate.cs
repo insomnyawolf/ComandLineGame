@@ -19,14 +19,16 @@ namespace ComandLineGame.Code.Scores
 
         private static void Standard()
         {
-            uint CalcuatedScore = Convert.ToUInt32((10 * (Game.combo * Game.combo)) / ((++Game.elapseds) * 2));
+            int CalcuatedScore = Convert.ToInt32((10 * (Game.combo * Game.combo)) / ((++Game.elapseds) * 2));
             Print.Print.Base(CalcuatedScore);
+            Code.Scores.Local.Save.SaveData(CalcuatedScore);
         }
 
         private static void NoTimmer()
         {
-            uint CalcuatedScore = Game.combo;
+            int CalcuatedScore = Game.combo;
             Print.Print.Base(CalcuatedScore);
+            Code.Scores.Local.Save.SaveData(CalcuatedScore);
         }
     }
 }

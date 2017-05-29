@@ -4,7 +4,7 @@ namespace ComandLineGame.Code.Scores.Print
 {
     class Print
     {
-        public static void Base(uint CalcuatedScore)
+        public static void Base(int CalcuatedScore)
         {
             string post;
             post =
@@ -20,8 +20,9 @@ namespace ComandLineGame.Code.Scores.Print
             post += Environment.NewLine + "Your score is: " + CalcuatedScore +
            Environment.NewLine +
            "Press any key to try again or escape to exit" + Environment.NewLine;
-
+            
             Console.WriteLine(post);
+            
         }
     }
 }

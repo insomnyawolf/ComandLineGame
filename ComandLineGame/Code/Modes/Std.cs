@@ -20,10 +20,8 @@ namespace ComandLineGame.Code.Modes
                     Game.combo++;
                 }
             }
-            OutputWriter.ClearCurrentConsole();
-            OutputWriter.ClearLines();
             watch.Stop();
-            Game.elapseds = Convert.ToUInt32(watch.ElapsedMilliseconds / 1000);
+            Game.elapseds = Convert.ToInt32(watch.ElapsedMilliseconds / 1000);
             Scores.Scores.Calculate();
         }
     }

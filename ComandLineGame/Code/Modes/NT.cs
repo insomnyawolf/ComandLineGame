@@ -19,8 +19,6 @@ namespace ComandLineGame.Code.Modes
                     Game.combo++;
                 }
             }
-            OutputWriter.ClearCurrentConsole();
-            OutputWriter.ClearLines();
             Scores.Scores.Calculate();
         }
     }
