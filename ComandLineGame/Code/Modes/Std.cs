@@ -14,9 +14,9 @@ namespace ComandLineGame.Code.Modes
             var watch = System.Diagnostics.Stopwatch.StartNew();
             while (hit == true)
             {
-                if (keybuffer.ElementAtOrDefault(Game.lines - 1) == null)
+                if (keybuffer.ElementAtOrDefault(Settings.Settings.lines - 1) == null)
                 {
-                    for (int x = 0; x < Game.lines; x++)
+                    for (int x = 0; x < Settings.Settings.lines; x++)
                     {
                         keybuffer.Add(Shared.Shared.Nextkey());
                         OutputWriter.Output();
@@ -34,6 +34,7 @@ namespace ComandLineGame.Code.Modes
                 else
                 {
                     keybuffer.Clear();
+                    Code.OutputWriter.ClearLines();
                 }
             }
             watch.Stop();

@@ -60,13 +60,15 @@
     <Compile Include="Code\Info.cs" />
     <Compile Include="Code\Modes\NT.cs" />
     <Compile Include="Code\Modes\Shared\Shared.cs" />
-    <Compile Include="Code\Modes\Mod1.cs" />
     <Compile Include="Code\Modes\Std.cs" />
     <Compile Include="Code\Scores\Calculate.cs" />
     <Compile Include="Code\OutputWriter.cs" />
     <Compile Include="Code\Scores\Local\Load.cs" />
     <Compile Include="Code\Scores\Local\Save.cs" />
     <Compile Include="Code\Scores\Print\Print.cs" />
+    <Compile Include="Code\Settings\Load.cs" />
+    <Compile Include="Code\Settings\Save.cs" />
+    <Compile Include="Code\Settings\Settings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

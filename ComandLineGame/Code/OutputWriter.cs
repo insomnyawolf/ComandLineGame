@@ -13,9 +13,9 @@ namespace ComandLineGame.Code
         {
             ClearCurrentConsole();
 
-            if (outputbuffer.ElementAtOrDefault(Game.lines - 1) == null)
+            if (outputbuffer.ElementAtOrDefault(Settings.Settings.lines - 1) == null)
             {
-                for (int x = 0; x < Game.lines; x++)
+                for (int x = 0; x < Settings.Settings.lines; x++)
                 {
                     outputbuffer.Add(String.Empty);
                 }
@@ -25,7 +25,7 @@ namespace ComandLineGame.Code
             outputbuffer.Reverse();
             foreach (string thing in outputbuffer)
             {
-                if(outformat <= Game.lines - 2)
+                if(outformat <= Settings.Settings.lines - 2)
                 {
                     outputline += Environment.NewLine + "        " + thing + "        ";
                     outformat++;

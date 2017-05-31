@@ -7,7 +7,11 @@ namespace ComandLineGame.Code
         {
             Console.WriteLine(
                 "Press Ctrl + C To Stop" + Environment.NewLine +
-                "Default keys are: Q,W,E,R" + Environment.NewLine +
+                "Default keys are: " + 
+                Settings.Settings.key1 + " , " +
+                Settings.Settings.key2 + " , " +
+                Settings.Settings.key3 + " , " +
+                Settings.Settings.key4 + Environment.NewLine +
                 "Press P key to start without timmer or" + Environment.NewLine +
                 "any other key to start the default mode" + Environment.NewLine);
         }
