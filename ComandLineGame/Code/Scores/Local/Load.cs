@@ -10,15 +10,14 @@ namespace ComandLineGame.Code.Scores.Local
         {
             if (System.IO.File.Exists(Environment.UserName + ".xml"))
             {
-                int CalcuatedScore;
                 XmlReader r = XmlReader.Create(Environment.UserName + ".xml");
                 r.ReadStartElement(Environment.UserName);
-                Console.WriteLine(Environment.NewLine + r.ReadElementContentAsString());
-                CalcuatedScore = r.ReadElementContentAsInt();
+                Game.CalcuatedScore = r.ReadElementContentAsInt();
                 Game.combo = r.ReadElementContentAsInt();
                 Game.elapseds = r.ReadElementContentAsInt();
+                Console.WriteLine(Environment.NewLine + r.ReadElementContentAsString());
                 r.Close();
-                Print.Print.Base(CalcuatedScore);
+                Print.Print.Base();
                 
             }
             else

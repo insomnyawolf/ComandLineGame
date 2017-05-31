@@ -4,7 +4,7 @@ namespace ComandLineGame.Code.Scores.Print
 {
     class Print
     {
-        public static void Base(int CalcuatedScore)
+        public static void Base()
         {
             string post;
             post =
@@ -17,7 +17,7 @@ namespace ComandLineGame.Code.Scores.Print
             {
                 post += " in " + Game.elapseds + " seconds.";
             }
-            post += Environment.NewLine + "Your score is: " + CalcuatedScore +
+            post += Environment.NewLine + "Your score is: " + Game.CalcuatedScore +
            Environment.NewLine +
            "Press any key to try again or escape to exit" + Environment.NewLine;
             

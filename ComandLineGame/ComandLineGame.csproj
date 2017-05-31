@@ -60,6 +60,7 @@
     <Compile Include="Code\Info.cs" />
     <Compile Include="Code\Modes\NT.cs" />
     <Compile Include="Code\Modes\Shared\Shared.cs" />
+    <Compile Include="Code\Modes\Mod1.cs" />
     <Compile Include="Code\Modes\Std.cs" />
     <Compile Include="Code\Scores\Calculate.cs" />
     <Compile Include="Code\OutputWriter.cs" />

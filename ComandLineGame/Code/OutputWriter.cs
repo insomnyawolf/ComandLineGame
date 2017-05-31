@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ComandLineGame.Code
 {
     class OutputWriter
     {
-        static int lines = 10; //Lines shown in screen
-        static List<string> outputbuffer = new List<string>();
+        static System.Collections.Generic.List<string> outputbuffer = new System.Collections.Generic.List<string>();
         static string outputline;
         static int outformat;
 
@@ -15,18 +13,19 @@ namespace ComandLineGame.Code
         {
             ClearCurrentConsole();
 
-            if (outputbuffer.ElementAtOrDefault(lines - 1) == null)
+            if (outputbuffer.ElementAtOrDefault(Game.lines - 1) == null)
             {
-                for (int x = 0; x < lines; x++)
+                for (int x = 0; x < Game.lines; x++)
                 {
                     outputbuffer.Add(String.Empty);
                 }
             }
             outputbuffer.RemoveAt(0);
             outputbuffer.Add(Game.output);
+            outputbuffer.Reverse();
             foreach (string thing in outputbuffer)
             {
-                if(outformat <= lines - 2)
+                if(outformat <= Game.lines - 2)
                 {
                     outputline += Environment.NewLine + "        " + thing + "        ";
                     outformat++;
@@ -37,6 +36,7 @@ namespace ComandLineGame.Code
                     outformat = 0;
                 }
             }
+            outputbuffer.Reverse();
             Console.WriteLine(outputline);
             outputline = null;
         }
