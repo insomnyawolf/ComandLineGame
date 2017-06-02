@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ComandLineGame.Code.Modes
+﻿namespace ComandLineGame.Code.Modes
 {
     class NT
     {
@@ -12,7 +10,7 @@ namespace ComandLineGame.Code.Modes
             while (hit == true)
             {
                 string key = Shared.Shared.Nextkey();
-                string keyinfo = Convert.ToString(Console.ReadKey(true).Key);
+                string keyinfo = System.Convert.ToString(System.Console.ReadKey(true).Key);
                 hit = keyinfo.Equals(key);
                 if (hit == true)
                 {

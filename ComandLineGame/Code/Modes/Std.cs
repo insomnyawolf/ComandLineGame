@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace ComandLineGame.Code.Modes
 {
@@ -24,7 +23,7 @@ namespace ComandLineGame.Code.Modes
                 }
                 keybuffer.Add(Shared.Shared.Nextkey());
                 OutputWriter.Output();
-                string keyinfo = Convert.ToString(Console.ReadKey(true).Key);
+                string keyinfo = System.Convert.ToString(System.Console.ReadKey(true).Key);
                 hit = keyinfo.Equals(keybuffer[1].ToString());
                 keybuffer.RemoveAt(0);
                 if (hit == true)
@@ -38,7 +37,7 @@ namespace ComandLineGame.Code.Modes
                 }
             }
             watch.Stop();
-            Game.elapseds = Convert.ToInt32(watch.ElapsedMilliseconds / 1000);
+            Game.elapseds = System.Convert.ToInt32(watch.ElapsedMilliseconds / 1000);
             Scores.Scores.Calculate();
         }
     }

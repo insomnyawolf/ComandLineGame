@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ComandLineGame</RootNamespace>
     <AssemblyName>ComandLineGame</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -65,7 +67,9 @@
     <Compile Include="Code\OutputWriter.cs" />
     <Compile Include="Code\Scores\Local\Load.cs" />
     <Compile Include="Code\Scores\Local\Save.cs" />
+    <Compile Include="Code\Scores\Local\Xml.cs" />
     <Compile Include="Code\Scores\Print\Print.cs" />
+    <Compile Include="Code\Settings\KeyBinds.cs" />
     <Compile Include="Code\Settings\Load.cs" />
     <Compile Include="Code\Settings\Save.cs" />
     <Compile Include="Code\Settings\Settings.cs" />

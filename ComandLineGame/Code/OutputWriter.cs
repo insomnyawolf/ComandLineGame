@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace ComandLineGame.Code
 {
@@ -17,7 +16,7 @@ namespace ComandLineGame.Code
             {
                 for (int x = 0; x < Settings.Settings.lines; x++)
                 {
-                    outputbuffer.Add(String.Empty);
+                    outputbuffer.Add(System.String.Empty);
                 }
             }
             outputbuffer.RemoveAt(0);
@@ -27,17 +26,17 @@ namespace ComandLineGame.Code
             {
                 if(outformat <= Settings.Settings.lines - 2)
                 {
-                    outputline += Environment.NewLine + "        " + thing + "        ";
+                    outputline += System.Environment.NewLine + "        " + thing + "        ";
                     outformat++;
                 }
                 else
                 {
-                    outputline += Environment.NewLine + "========" + thing + "========";
+                    outputline += System.Environment.NewLine + "========" + thing + "========";
                     outformat = 0;
                 }
             }
             outputbuffer.Reverse();
-            Console.WriteLine(outputline);
+            System.Console.WriteLine(outputline);
             outputline = null;
         }
 
@@ -48,13 +47,13 @@ namespace ComandLineGame.Code
 
         public static void ClearCurrentConsole()
         {
-            int currentLineCursor = ++Console.CursorTop;
+            int currentLineCursor = ++System.Console.CursorTop;
             int targetLine = currentLineCursor - 100;
             while (currentLineCursor > targetLine && currentLineCursor > 3)
             {
-                Console.SetCursorPosition(0, currentLineCursor);
-                Console.Write(new string(' ', Console.WindowWidth));
-                Console.SetCursorPosition(0, currentLineCursor);
+                System.Console.SetCursorPosition(0, currentLineCursor);
+                System.Console.Write(new string(' ', System.Console.WindowWidth));
+                System.Console.SetCursorPosition(0, currentLineCursor);
                 currentLineCursor--;
             }
         }

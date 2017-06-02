@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ComandLineGame.Code.Scores.Print
+﻿namespace ComandLineGame.Code.Scores.Print
 {
     class Print
     {
@@ -8,20 +6,20 @@ namespace ComandLineGame.Code.Scores.Print
         {
             string post;
             post =
-               Environment.NewLine +
+               System.Environment.NewLine +
                "Game Mode: " + Game.Mode +
-               Environment.NewLine +
+               System.Environment.NewLine +
                "You archived: " + Game.combo +
                " hits";
             if (Game.Mode == "Std")
             {
                 post += " in " + Game.elapseds + " seconds.";
             }
-            post += Environment.NewLine + "Your score is: " + Game.CalcuatedScore +
-           Environment.NewLine +
-           "Press any key to try again or escape to exit" + Environment.NewLine;
-            
-            Console.WriteLine(post);
+            post += System.Environment.NewLine + "Your score is: " + Game.CalcuatedScore +
+           System.Environment.NewLine +
+           "Press any key to try again or escape to exit" + System.Environment.NewLine;
+
+            System.Console.WriteLine(post);
             
         }
     }
