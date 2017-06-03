@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            Code.Settings.SettingsInitialize.Initialize();
+            Code.Settings.SettingsIO.Initialize();
             Code.Info.Intro();
             bool done = false;
             while (!done)

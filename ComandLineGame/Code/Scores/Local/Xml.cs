@@ -70,18 +70,18 @@ namespace ComandLineGame.Code.Scores.Local
                     new ScoreData() { Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date }
                 }
             };
-            U.ToXMLFile(Settings.Settings.Savefile);
+            U.ToXMLFile(Settings.SettingsVar.ScoreFile);
         }
         public static void AddData()
         {
-            Scores ReadUser = Scores.FromXMLFile(Settings.Settings.Savefile);
+            Scores ReadUser = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
             ReadUser.Score.Add(new ScoreData() { Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date });
-            ReadUser.ToXMLFile(Settings.Settings.Savefile);
+            ReadUser.ToXMLFile(Settings.SettingsVar.ScoreFile);
         }
 
         public static void LoadBest()
         {
-            Scores ReadUser = Scores.FromXMLFile(Settings.Settings.Savefile);
+            Scores ReadUser = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
             System.Console.WriteLine(ReadUser.Score.Max().ToString());
         }
     }

@@ -13,9 +13,9 @@ namespace ComandLineGame.Code.Modes
             var watch = System.Diagnostics.Stopwatch.StartNew();
             while (hit == true)
             {
-                if (keybuffer.ElementAtOrDefault(Settings.Settings.lines - 1) == null)
+                if (keybuffer.ElementAtOrDefault(Settings.SettingsVar.lines - 1) == null)
                 {
-                    for (int x = 0; x < Settings.Settings.lines; x++)
+                    for (int x = 0; x < Settings.SettingsVar.lines; x++)
                     {
                         keybuffer.Add(Shared.Shared.Nextkey());
                         OutputWriter.Output();

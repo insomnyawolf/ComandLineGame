@@ -73,6 +73,7 @@
     <Compile Include="Code\Settings\Load.cs" />
     <Compile Include="Code\Settings\Save.cs" />
     <Compile Include="Code\Settings\Settings.cs" />
+    <Compile Include="Code\Settings\Xml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,6 +91,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Code\Shared\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

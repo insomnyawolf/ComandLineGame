@@ -6,7 +6,7 @@
         {
             if(Game.CalcuatedScore > 100)
             {
-                if (System.IO.File.Exists(Settings.Settings.Savefile))
+                if (System.IO.File.Exists(Settings.SettingsVar.ScoreFile))
                 {
                     try
                     {

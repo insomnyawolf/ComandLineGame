@@ -2,6 +2,14 @@
 {
     class Save
     {
-        //TODO
+        public static void Overwrite()
+        {
+
+        }
+
+        public static void Create()
+        {
+            Settings.CreateConfig();
+        }
     }
 }

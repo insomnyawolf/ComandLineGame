@@ -7,10 +7,10 @@
                 System.Console.WriteLine(
                 "Press Ctrl + C To Stop" + System.Environment.NewLine +
                 "Default keys are:  " + 
-                Settings.Settings.key1 + "  " +
-                Settings.Settings.key2 + "  " +
-                Settings.Settings.key3 + "  " +
-                Settings.Settings.key4 + System.Environment.NewLine +
+                Settings.SettingsVar.key1 + "  " +
+                Settings.SettingsVar.key2 + "  " +
+                Settings.SettingsVar.key3 + "  " +
+                Settings.SettingsVar.key4 + System.Environment.NewLine +
                 "Press P key to start without timmer or" + System.Environment.NewLine +
                 "any other key to start the default mode" + System.Environment.NewLine);
         }

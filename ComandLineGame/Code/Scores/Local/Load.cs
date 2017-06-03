@@ -5,7 +5,7 @@
         
         public static void LoadData()
         {
-            if(System.IO.File.Exists(Settings.Settings.Savefile))
+            if(System.IO.File.Exists(Settings.SettingsVar.ScoreFile))
             {
                 Scores.LoadBest();
             }
