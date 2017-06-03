@@ -9,5 +9,7 @@
         public static int elapseds;
         public static int combo;
         public static int CalcuatedScore;
+        //Testing
+        public static int topscore;
     }
 }

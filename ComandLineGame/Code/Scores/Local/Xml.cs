@@ -82,7 +82,14 @@ namespace ComandLineGame.Code.Scores.Local
         public static void LoadBest()
         {
             Scores ReadUser = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
-            System.Console.WriteLine(ReadUser.Score.Max().ToString());
+            foreach(var score in ReadUser.Score)
+            {
+                if(score.Score > Game.topscore)
+                {
+                    Game.topscore = score.Score;
+                }
+            }
+            System.Console.WriteLine("Your topscore is: " + Game.topscore);
         }
     }
 }
