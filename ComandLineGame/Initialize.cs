@@ -24,7 +24,14 @@
 
         private static void Scores()
         {
-            Code.Scores.Local.Id.LoadId();
+            if (System.IO.File.Exists(Code.Settings.SettingsVar.ScoreFile))
+            {
+                Code.Scores.Local.Id.LoadId();
+            }
+            else
+            {
+                Code.Scores.Local.Scores.CreateSave();
+            }
         }
     }
 }

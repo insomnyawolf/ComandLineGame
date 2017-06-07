@@ -6,21 +6,14 @@
         {
             if(Game.CalcuatedScore > 100)
             {
-                if (System.IO.File.Exists(Settings.SettingsVar.ScoreFile))
+                try
                 {
-                    try
-                    {
-                        Scores.AddData();
-                    }
-                    catch (System.InvalidOperationException)
-                    {
-                        Scores.CreateSave();
-                    }
+                    Scores.AddData();
                 }
-                else
+                catch (System.InvalidOperationException)
                 {
                     Scores.CreateSave();
-
+                    Scores.AddData();
                 }
                 Game.Id++;
             }

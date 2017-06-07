@@ -68,7 +68,6 @@ namespace ComandLineGame.Code.Scores.Local
             {
                 Score = new System.Collections.Generic.List<ScoreData>
                 {
-                    new ScoreData() { Id = Game.Id, Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date }
                 }
             };
             U.ToXMLFile(Settings.SettingsVar.ScoreFile);
