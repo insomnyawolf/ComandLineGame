@@ -6,6 +6,7 @@ namespace ComandLineGame.Code.Scores.Local
     [System.Xml.Serialization.XmlType("score")]
     public class ScoreData
     {
+        [System.Xml.Serialization.XmlAttribute("id")] public int Id { get; set; }
         [System.Xml.Serialization.XmlAttribute("score")] public int Score { get; set; }
         [System.Xml.Serialization.XmlAttribute("combo")] public int Combo { get; set; }
         [System.Xml.Serialization.XmlAttribute("time")] public int Time { get; set; }
@@ -67,29 +68,31 @@ namespace ComandLineGame.Code.Scores.Local
             {
                 Score = new System.Collections.Generic.List<ScoreData>
                 {
-                    new ScoreData() { Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date }
+                    new ScoreData() { Id = Game.Id, Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date }
                 }
             };
             U.ToXMLFile(Settings.SettingsVar.ScoreFile);
         }
         public static void AddData()
         {
-            Scores ReadUser = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
-            ReadUser.Score.Add(new ScoreData() { Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date });
-            ReadUser.ToXMLFile(Settings.SettingsVar.ScoreFile);
+            Scores ReadScore = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
+            ReadScore.Score.Add(new ScoreData() { Id = Game.Id, Score = Game.CalcuatedScore, Combo = Game.combo, Time = Game.elapseds, Name = Game.Name, Date = Game.Date });
+            ReadScore.ToXMLFile(Settings.SettingsVar.ScoreFile);
+        }
+
+        public static void LoadId()
+        {
+            Scores ReadScore = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
+            int Load = ReadScore.Score.Max(x => (int)x.Id);
+            Game.Id = ++Load;
         }
 
         public static void LoadBest()
         {
-            Scores ReadUser = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
-            foreach(var score in ReadUser.Score)
-            {
-                if(score.Score > Game.topscore)
-                {
-                    Game.topscore = score.Score;
-                }
-            }
-            System.Console.WriteLine("Your topscore is: " + Game.topscore);
+            Scores ReadScore = Scores.FromXMLFile(Settings.SettingsVar.ScoreFile);
+            int Load = ReadScore.Score.Max(x => (int)x.Score);
+            //Game.LoadId = ReadScore.Score.Find.Score
+            System.Console.WriteLine(ReadScore.Score[Game.LoadId].Name);
         }
     }
 }

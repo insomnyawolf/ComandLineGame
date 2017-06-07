@@ -20,7 +20,9 @@
                 else
                 {
                     Scores.CreateSave();
+
                 }
+                Game.Id++;
             }
         }
     }

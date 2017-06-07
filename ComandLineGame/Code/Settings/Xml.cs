@@ -1,20 +1,21 @@
 ﻿namespace ComandLineGame.Code.Settings
 
 {
-    [System.Xml.Serialization.XmlType("keys")]
-    public class Keys
+    [System.Xml.Serialization.XmlType("config")]
+    public class Config
     {
         [System.Xml.Serialization.XmlAttribute("k1")] public string K1 { get; set; }
         [System.Xml.Serialization.XmlAttribute("k2")] public string K2 { get; set; }
         [System.Xml.Serialization.XmlAttribute("k3")] public string K3 { get; set; }
         [System.Xml.Serialization.XmlAttribute("k4")] public string K4 { get; set; }
+        [System.Xml.Serialization.XmlAttribute("lines")] public int Lines { get; set; }
     }
 
     [System.Xml.Serialization.XmlType("settings")]
     public class Settings
     {
         [System.Xml.Serialization.XmlAttribute("name")] public string Name { get; set; }
-        [System.Xml.Serialization.XmlElement("keys")] public System.Collections.Generic.List<Keys> Keys { get; set; }
+        [System.Xml.Serialization.XmlElement("configs")] public System.Collections.Generic.List<Config> Config { get; set; }
 
         public string ToXMLString()
         {
@@ -60,35 +61,42 @@
 
         public static void CreateConfig()
         {
-            Settings Binds = new Settings()
+            Settings Write = new Settings()
             {
-                Keys = new System.Collections.Generic.List<Keys>
+                Config = new System.Collections.Generic.List<Config>
                 {
-                    new Keys() { K1 = "D", K2 = "F", K3 = "J", K4 = "K" }
+                    new Config() { K1 = "D", K2 = "F", K3 = "J", K4 = "K", Lines = 10, }
                 }
             };
-            Binds.ToXMLFile(SettingsVar.SettingsFile);
+            Write.ToXMLFile(SettingsVar.SettingsFile);
         }
 
-        public static void OverwriteConfig()
+        //Fix This
+
+        //public static void OverwriteConfig()
+        //{
+        //    Settings Overwrite = Settings.FromXMLFile(SettingsVar.SettingsFile);
+        //    Overwrite.Config.RemoveAt(); 
+        //    Overwrite.Config.Add (new Config() { K1 = SettingsVar.key1, K2 = SettingsVar.key2, K3 = SettingsVar.key3, K4 = SettingsVar.key4, Lines = SettingsVar.lines });
+        //    Overwrite.ToXMLFile(SettingsVar.SettingsFile);
+        //}
+
+        public static void AddConfig()
         {
-            Settings Binds = new Settings()
-            {
-                Keys = new System.Collections.Generic.List<Keys>
-                {
-                    new Keys() { K1 = SettingsVar.key1, K2 = SettingsVar.key2, K3 = SettingsVar.key3, K4 = SettingsVar.key4 }
-                }
-            };
-            Binds.ToXMLFile(SettingsVar.SettingsFile);
+            Settings Overwrite = Settings.FromXMLFile(SettingsVar.SettingsFile);
+            Overwrite.Config.Add(new Config() { K1 = SettingsVar.key1, K2 = SettingsVar.key2, K3 = SettingsVar.key3, K4 = SettingsVar.key4, Lines = SettingsVar.lines });
+            Overwrite.ToXMLFile(SettingsVar.SettingsFile);
         }
 
         public static void LoadConfig()
         {
-            Settings ReadKeys = Settings.FromXMLFile(SettingsVar.SettingsFile);
-            SettingsVar.key1 = ReadKeys.Keys[0].K1;
-            SettingsVar.key2 = ReadKeys.Keys[0].K2;
-            SettingsVar.key3 = ReadKeys.Keys[0].K3;
-            SettingsVar.key4 = ReadKeys.Keys[0].K4;
+            Settings Read = Settings.FromXMLFile(SettingsVar.SettingsFile);
+            SettingsVar.key1 = Read.Config[0].K1;
+            SettingsVar.key2 = Read.Config[0].K2;
+            SettingsVar.key3 = Read.Config[0].K3;
+            SettingsVar.key4 = Read.Config[0].K4;
+            SettingsVar.lines = Read.Config[0].Lines;
+
         }
     }
 }
